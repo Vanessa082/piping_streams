@@ -44,31 +44,31 @@
 
 // reading directories
 
-const { readdirSync, readdir } = require('fs')
-const { readdir: readdirProm } = require('fs/promises')
+// const { readdirSync, readdir } = require('fs')
+// const { readdir: readdirProm } = require('fs/promises')
 
-try {
-  console.log('sync', readdirSync(__dirname))
-} catch (err) {
-  console.error(err)
-}
+// try {
+//   console.log('sync', readdirSync(__dirname))
+// } catch (err) {
+//   console.error(err)
+// }
 
-readdir(__dirname, (err, files) => {
-  if (err) {
-    console.error(err)
-    return
-  }
-  console.log('callback', files)
-})
+// readdir(__dirname, (err, files) => {
+//   if (err) {
+//     console.error(err)
+//     return
+//   }
+//   console.log('callback', files)
+// })
 
-async function run() {
-  const files = await readdirProm(__dirname)
-  console.log('promise', files)
-}
+// async function run() {
+//   const files = await readdirProm(__dirname)
+//   console.log('promise', files)
+// }
 
-run().catch((err) => {
-  console.error(err)
-})
+// run().catch((err) => {
+//   console.error(err)
+// })
 
 const { createServer } = require('http')
 const { Readable, Transform, pipeline } = require('stream')
