@@ -4,9 +4,6 @@ net.createServer((socket) => {
   const interval = setInterval(() => {
     socket.write('beat')
   }, 1000)
-
-
-
   socket.on('data', (data) => {
     socket.write(data.toString().toUpperCase())
   })
@@ -15,6 +12,8 @@ net.createServer((socket) => {
     clearInterval(interval)
   })
 }).listen(3000)
+
+// client 
 
 const socket = net.connect(3000)
 
